@@ -10,3 +10,18 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*General*/
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+.my-container{
+
+  width: 100vw;
+}
+
+.active{
+  color: #0282F9;
+}
