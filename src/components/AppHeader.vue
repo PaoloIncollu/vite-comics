@@ -2,7 +2,69 @@
 export default {
   data() {
     return { 
+      navBar: [
+        {
+          label: 'CHARACTER',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'COMICS',
+          url: '#',
+          active:true
+                    
+        },
+        {
+          label: 'MOVIES',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'TV',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'GAMES',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'COLLECTIBLES',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'VIDEOS',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'FANS',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'NEWS',
+          url: '#',
+          active:false
+                    
+        },
+        {
+          label: 'SHOP',
+          url: '#',
+          active:false
+                    
+        }
       
+      ],
     }
   }
 }
@@ -10,10 +72,57 @@ export default {
 
 <template>
   <header>
-   
-  </header>
+      <div>
+        <div>
+          <img src="../../public/img/dc-logo.png" alt="DC logo">
+        </div>
+        
+        <ul>
+          <li v-for="(nav,index) in navBar" >
+            {{ nav.label }}
+          </li>
+        </ul>
+      </div>
+    </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
+header{
+  div{
+
+    width: 80%;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div{
+
+      img{
+
+        width: 80px;
+        height: 80px;
+      }
+
+    }
+    
+    ul{
+
+      list-style: none;
+      display: flex;
+
+      
+      li{
+
+        padding: 20px;
+        font-weight: bold;
+        color: #647682;
+
+      }
+    }
+    
+  }
+}
 </style>
