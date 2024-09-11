@@ -78,7 +78,7 @@ export default {
         </div>
         
         <ul>
-          <li v-for="(nav,index) in navBar" >
+          <li v-for="(nav,index) in navBar" :key="index" >
             {{ nav.label }}
           </li>
         </ul>
@@ -89,17 +89,24 @@ export default {
 <style lang="scss" scoped>
 
 header{
-  div{
 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  background-color: white;
+  div{
+    
     width: 80%;
-    padding: 10px 0;
     margin: 0 auto;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     div{
-
+      
       img{
 
         width: 80px;

@@ -23,17 +23,18 @@ export default {
 <style lang="scss" scoped>
 
     main{
-
+    padding-top: 10vh;
     background-color: black;
     width: 100%;
-
+    height: 40vh;
 
     div{
 
     width: 80%;
+    height: 40vh;
     margin: 0 auto;
     color: white;
-    padding: 50px 0;
+    padding: 10vh 0;
     }
 
     }

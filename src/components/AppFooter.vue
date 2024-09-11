@@ -170,7 +170,7 @@ export default {
       <div class="container-footer">
         <div class="footer-top">
           <ul>
-            <li v-for="(item,index) in listInfo">
+            <li v-for="(item,index) in listInfo" :key="index">
 
               <div>
                 <img :src="item.img" :alt="item.label">
@@ -190,26 +190,26 @@ export default {
           <div class="footer-bottom-top">
 
             <div class="container-link-utili">
-              <ul v-for="(comics,index) in linkUtili">
+              <ul v-for="(comics,index) in linkUtili" :key="index">
 
                 <h4>
                   {{ comics.title }}
                 </h4>
 
-                <li v-for="(opt,index) in linkUtili[index].options">
+                <li v-for="(opt,index) in linkUtili[index].options" :key="index">
 
                   {{opt.option }}
 
                 </li>
 
-              </ul>
-            </div>
-            
-            <div class="logo-footer">
+              </ul><div class="logo-footer">
 
           <img src="../../public/img/dc-logo-bg.png" alt="">
               
             </div>
+            </div>
+            
+            
           </div>
           
         
@@ -224,13 +224,13 @@ export default {
               </div>
 
               <div class="icons-social">
-                <ul v-for="(social,index) in listSocial">
+                <ul v-for="(social,index) in listSocial" :key="index">
 
                   <h4>
                     {{ social.title }}
                   </h4>
 
-                  <li v-for="(iconSocial,index) in listSocial[index].social">
+                  <li v-for="(iconSocial,index) in listSocial[index].social" :key="index">
 
                     <a href="#">
 
@@ -255,23 +255,26 @@ export default {
 <style lang="scss" scoped>
 
 footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  background-image: url('../public/img/footer-bg.jpg');
+  background-size: cover;
   
   .container-footer{
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
+    
+    position: relative;
+    z-index: 1;
     width: 100%;
-    height: fit-content;
-    background-image: url('../public/img/footer-bg.jpg');
-    background-size: cover;
+    
     
 
     .footer-top{
       
       background-color: #0282F9;
       width: 100%;
-      height: max-content;
+      
       ul{
 
         width: 80%;
@@ -303,23 +306,21 @@ footer{
 
     .footer-bottom-top{
 
-      position: relative;
       width: 80%;
-      height: 400px;
-      margin: 0 auto;
-      padding: 50px 0;
+      height: 350px;
+      margin: 30px auto;
+      
       .logo-footer{
-
+        z-index: 2;
         position: absolute;
-        z-index: -1;
-        top: -80px;
-        right: 40px;
+        top: 150px;
+        right: 200px;
         width: 500px;
         height: 500px;
       }
 
       .container-link-utili{
-
+        
         width: 30%;
         height: 100%;
         display: flex;
@@ -346,17 +347,19 @@ footer{
     } 
 
     .container-bg-grey-footer{
-      
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
       width: 100%;
+      height: 100px;
       background-color:#303030;
-      padding: 20px;
+      
 
       .footer-bottom-bottom{
-      
         
-        z-index: 1;
         width: 80%;
-        
+        height: 100px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
