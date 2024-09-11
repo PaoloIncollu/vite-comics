@@ -93,17 +93,33 @@ export default {
 
 <template>
     <main>
-      
+
       <div class="bg-img-main">
 
       </div>
 
       <div class="container-cards">
 
-        <SingleCards v-for="(card,index) in cards" :key="index" :card="card" />
+        <button class="my-btn top">
 
+          CURRENT SERIES
+
+        </button>
+
+        <div class="cards">
+
+          <SingleCards v-for="(card,index) in cards" :key="index" :card="card" />
+
+        </div>
+
+        <button class="my-btn bottom">
+
+          LOAD MORE
+        
+        </button>
       </div>
-      
+
+       
       
     </main>
 </template>
@@ -131,14 +147,46 @@ export default {
     .container-cards{
 
       width: 80%;
-      flex-wrap: wrap;
       margin: 0 auto;
-      color: white;
-      display: flex;
-      padding: 100px 0;
-    
-    }
 
+      .cards{
+
+        width: 100%;
+        flex-wrap: wrap;
+        color: white;
+        display: flex;
+        padding: 50px 0;
+      
+      }
+
+      .my-btn{
+
+        background-color: $my-blue;
+        color: white;
+        font-weight: bold;
+        border: none;
+
+      }
+
+      .my-btn.top{
+        margin-top:-30px;
+        padding: 20px;
+        font-size: 20px;
+        
+      }
+
+      .my-btn.bottom{
+
+        width: 200px;
+        margin-left:calc(50% - 100px);
+        padding: 10px;
+        margin-bottom: 20px;
+
+      }
+
+
+    }
+    
   }
 
 </style>
