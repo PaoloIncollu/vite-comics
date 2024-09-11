@@ -92,7 +92,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+@use '../assets/scss/partials/mixins.scss' as *;
+@use '../assets/scss/partials/variables.scss' as *;
 header{
 
   width: 100%;
@@ -122,7 +123,7 @@ header{
     
     ul{
 
-      list-style: none;
+      @include list-ul;
       display: flex;
 
       
@@ -131,13 +132,12 @@ header{
         padding: 20px;
 
         a{
-          text-decoration: none;
-          font-weight: bold;
-          color: #647682;
+         @include style-a;
+         color: $my-color-link;
           &:hover{
             cursor: pointer;
-            color: #0282F9;
-            border-bottom:3px solid #0282F9;
+            color: $my-blue;
+            border-bottom:3px solid $my-blue;
           }
         }
 

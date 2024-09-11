@@ -210,11 +210,13 @@ export default {
 
                 </li>
 
-              </ul><div class="logo-footer">
+              </ul>
 
-          <img src="../../public/img/dc-logo-bg.png" alt="">
+              <div class="logo-footer">
+
+                <img src="../../public/img/dc-logo-bg.png" alt="">
               
-            </div>
+              </div>
             </div>
             
             
@@ -261,7 +263,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+@use '../assets/scss/partials/mixins.scss' as *;
+@use '../assets/scss/partials/variables.scss' as *;
 footer{
   width: 100%;
   position: absolute;
@@ -280,11 +283,11 @@ footer{
 
     .footer-top{
       
-      background-color: #0282F9;
+      background-color: $my-blue;
       width: 100%;
       
       ul{
-
+        @include list-ul;
         width: 80%;
         margin: 0 auto;
         padding: 40px;
@@ -294,7 +297,6 @@ footer{
 
         li{
           display: flex;
-          list-style: none;
           color: white;
             
           div{
@@ -304,7 +306,7 @@ footer{
               
           }
           a{
-
+            @include style-a;
             padding: 0 25px;
             align-self: center;
             text-decoration: none;
@@ -339,21 +341,25 @@ footer{
         
         ul{
 
-          list-style: none;
+          @include list-ul;
           padding-bottom: 10px;
                     
           h4{
             color: white;
-            font-weight: bold;
+            font-weight: bolder;
             padding-bottom: 10px;
           }
                     
           li{
             
             padding: 2px 0;
+
             a{
-              color: grey;
-              text-decoration: none;
+              @include style-a;
+              color: $my-color-link;
+              &:hover{
+                color: white;
+              }
             }
             
           }
@@ -368,7 +374,7 @@ footer{
       z-index: 2;
       width: 100%;
       height: 100px;
-      background-color:#303030;
+      background-color:$my-bg-grey;
       
 
       .footer-bottom-bottom{
@@ -384,8 +390,8 @@ footer{
         button{
           cursor: pointer;
           padding: 10px 8px;
-          border: 2px solid #0282F9;
-          background-color: #303030;
+          border: 2px solid $my-blue;
+          background-color: $my-bg-grey;
           color: white;
           font-weight: bold;
         }
@@ -395,14 +401,15 @@ footer{
       .icons-social{
 
         ul{
-
+          
+          @include list-ul;
           display: flex;
           align-items: center;
-          list-style: none;
+          
           
           h4{
 
-            color: #0282F9;
+            color: $my-blue;
             padding-left: 10px;
           }
 
@@ -413,6 +420,7 @@ footer{
               display: block;
               width: 50px;
               padding: 0 10px;
+
             }
           }
         }
