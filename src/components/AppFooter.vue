@@ -54,6 +54,7 @@ export default {
 
           ]
         },
+        
         {
           title:'SHOP',
           options:[
@@ -67,6 +68,7 @@ export default {
 
           ]
         },
+        
         {
           title:'DC',
           options:[
@@ -129,7 +131,7 @@ export default {
 
 
           ]
-        },
+        }
 
         
       ],
@@ -212,14 +214,14 @@ export default {
 
               </ul>
 
-              <div class="logo-footer">
-
-                <img src="../../public/img/dc-logo-bg.png" alt="">
               
-              </div>
             </div>
             
-            
+            <div class="logo-footer">
+
+              <img src="../../public/img/dc-logo-bg.png" alt="">
+              
+            </div>
           </div>
           
         
@@ -255,7 +257,7 @@ export default {
             </div>
           </div>
           
-      </div>  
+        </div>  
     </div>
         
       
@@ -265,30 +267,34 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/partials/mixins.scss' as *;
 @use '../assets/scss/partials/variables.scss' as *;
+
 footer{
+  position: relative;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0; 
+  height: 100%;
   background-image: url('../public/img/footer-bg.jpg');
   background-size: cover;
   
   .container-footer{
     
-    position: relative;
-    z-index: 1;
+    
     width: 100%;
     
     
 
     .footer-top{
-      
+      position: absolute;
+      top: 0;
+      right: 0;
       background-color: $my-blue;
       width: 100%;
+      height: 200px;
+      
       
       ul{
         @include list-ul;
         width: 80%;
+        height: 100%;
         margin: 0 auto;
         padding: 40px;
         display: flex;
@@ -317,33 +323,36 @@ footer{
     }
 
     .footer-bottom-top{
-
+      
+      display: flex;
       width: 80%;
-      height: 350px;
-      margin: 30px auto;
+      margin: 0 auto ;
+      padding-top: 150px;
       
       .logo-footer{
-        z-index: 2;
-        position: absolute;
-        top: 150px;
-        right: 200px;
-        width: 500px;
-        height: 500px;
+        
+        position: relative;
+        right: -10%;
+        width: 50%;
+        
       }
 
       .container-link-utili{
         
-        width: 30%;
-        height: 100%;
+        padding-top: 100px;
+        width: 50%;
+        height: 400px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        
         
         ul{
 
           @include list-ul;
           padding-bottom: 10px;
-                    
+          padding-left: 60px;
+                
           h4{
             color: white;
             font-weight: bolder;

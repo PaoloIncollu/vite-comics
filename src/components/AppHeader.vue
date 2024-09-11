@@ -72,13 +72,19 @@ export default {
 
 <template>
   <header>
+
       <div>
+
         <div>
+
           <img src="../../public/img/dc-logo.png" alt="DC logo">
+
         </div>
         
         <ul>
+
           <li v-for="(nav,index) in navBar" :key="index" >
+
             <a href="#">
 
               {{ nav.label }}
@@ -86,27 +92,34 @@ export default {
             </a>
             
           </li>
+
         </ul>
+
       </div>
+
     </header>
+
 </template>
 
 <style lang="scss" scoped>
+
 @use '../assets/scss/partials/mixins.scss' as *;
 @use '../assets/scss/partials/variables.scss' as *;
+
 header{
 
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
+  height: 100px;
   background-color: white;
+
   div{
     
     width: 80%;
     margin: 0 auto;
-    height: 10vh;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,4 +159,5 @@ header{
     
   }
 }
+
 </style>
