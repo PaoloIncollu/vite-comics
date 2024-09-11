@@ -79,7 +79,12 @@ export default {
         
         <ul>
           <li v-for="(nav,index) in navBar" :key="index" >
-            {{ nav.label }}
+            <a href="#">
+
+              {{ nav.label }}
+
+            </a>
+            
           </li>
         </ul>
       </div>
@@ -124,8 +129,17 @@ header{
       li{
 
         padding: 20px;
-        font-weight: bold;
-        color: #647682;
+
+        a{
+          text-decoration: none;
+          font-weight: bold;
+          color: #647682;
+          &:hover{
+            cursor: pointer;
+            color: #0282F9;
+            border-bottom:3px solid #0282F9;
+          }
+        }
 
       }
     }

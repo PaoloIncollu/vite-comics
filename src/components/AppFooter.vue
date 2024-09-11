@@ -176,9 +176,12 @@ export default {
                 <img :src="item.img" :alt="item.label">
               </div>
               
-              <span>
+              <a href="#">
+
                 {{ item.label }}
-              </span>
+
+              </a>
+                
             </li>
           </ul>
 
@@ -198,7 +201,12 @@ export default {
 
                 <li v-for="(opt,index) in linkUtili[index].options" :key="index">
 
-                  {{opt.option }}
+                  <a href="#">
+
+                    {{opt.option }}
+
+                  </a>
+                  
 
                 </li>
 
@@ -295,10 +303,12 @@ footer{
             align-self: center;
               
           }
-          span{
+          a{
 
             padding: 0 25px;
             align-self: center;
+            text-decoration: none;
+            color: white;
           }
         }
       }
@@ -339,7 +349,12 @@ footer{
           }
                     
           li{
-            color: grey;
+            
+            padding: 2px 0;
+            a{
+              color: grey;
+              text-decoration: none;
+            }
             
           }
         }
@@ -367,7 +382,7 @@ footer{
         
       div{
         button{
-
+          cursor: pointer;
           padding: 10px 8px;
           border: 2px solid #0282F9;
           background-color: #303030;
